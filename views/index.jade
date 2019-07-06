@@ -1,0 +1,17 @@
+extends layout
+
+-var videos = #{getVideos()}
+
+block content
+  h1 Hey
+  p Welcome to #{title}
+
+    
+  for v in videos
+    p #{v}
+    video(width='320', height='240', autoplay='' controls='')
+      source(src="#{'/videos/'+v}")
+      source(src='/video/movie.ogg', type='video/ogg')
+
+      
+
