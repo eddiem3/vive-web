@@ -19,12 +19,10 @@ fs.readdir(directoryPath, function (err, files) {
 	files.forEach(function (file) {
 		// Do whatever you want to do with the file
 		videos.push(file);
-		console.log(file); 
 	    });
     });
 
 
-var h = "hi";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
