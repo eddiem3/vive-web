@@ -1,19 +1,25 @@
 extends layout
 
 -var videos = #{getVideos()}
-
 block content
   nav(class="navbar navbar-light bg-light")
    span(class="navbar-brand mb-0 h1") Vivecam
     
-      
-  for v in videos
-    
-    .card
-     .card-body
-      video(width='320', height='240', autoplay='' controls='')
-       source(src="#{v}")
-       source(src='/video/movie.ogg', type='video/ogg')
-
-      
+  .container
+   .row
+    .col
+      for v in videos
+       .card
+        .card-body
+         video(width='320', height='240', autoplay='' controls='')
+          source(src="#{'https://storage.googleapis.com/vivecam/' +v}")
+          source(src='/video/movie.ogg', type='video/ogg')
+         p(class="card-text") #{v}
+   
+   .row
+    .col
+     for i in images      
+      .card
+       .card-body
+        img(src="#{'https://storage.googleapis.com/vivecam/' +i}" width='320' height='240')
 
